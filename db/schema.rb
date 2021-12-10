@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_12_10_100833) do
   create_table "houses_reservations", id: false, force: :cascade do |t|
     t.bigint "house_id", null: false
     t.bigint "reservation_id", null: false
+    t.index ["house_id", "reservation_id"], name: "index_houses_reservations_on_house_id_and_reservation_id"
   end
 
   create_table "reservations", force: :cascade do |t|

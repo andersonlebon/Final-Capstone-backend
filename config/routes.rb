@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   root 'users#index'
   scope :api do
     scope :v1 do
-      resources :users
+      resources :users  do
+        resources :reservations
+        resources :houses
+      end
     end
   end
 end

@@ -1,0 +1,15 @@
+current directory: /home/carl/Desktop/final-capstone-backend/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/home/carl/.rbenv/versions/3.0.2/bin/ruby -I /home/carl/.rbenv/versions/3.0.2/lib/ruby/site_ruby/3.0.0 -r ./siteconf20211210-5591-obqbll.rb extconf.rb
+creating Makefile
+
+current directory: /home/carl/Desktop/final-capstone-backend/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= clean
+
+current directory: /home/carl/Desktop/final-capstone-backend/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\=
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/carl/Desktop/final-capstone-backend/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20211210-5591-mu1wf9

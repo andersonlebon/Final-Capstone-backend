@@ -14,3 +14,8 @@ User.create(name: "joe")
 User.create(name: "jim")
 User.create(name: "jane")
 User.create(name: "joe")
+
+House.create(title: "Gryffindor", user_id: 1)
+House.create(title: "Slytherin", user_id: 2)
+House.create(title: "Ravenclaw", user_id: 3)
+House.create(title: "Hufflepuff", user_id: 4)

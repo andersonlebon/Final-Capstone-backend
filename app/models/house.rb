@@ -1,7 +1,7 @@
 class House < ApplicationRecord
   belongs_to :user
 
-  has_and_belongs_to_many :reservations
+  has_many :reservations
 
   validates :house_description, presence: true, length: { maximum: 150 }
 
@@ -9,5 +9,5 @@ class House < ApplicationRecord
 
   validates :title, uniqueness: true, length: { maximum: 50 }
 
-  validate :discount, :price, numericality: { min: 0 }
+  validates :discount, :price, numericality: { min: 0 }
 end

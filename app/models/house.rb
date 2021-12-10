@@ -9,5 +9,5 @@ class House < ApplicationRecord
 
   validates :title, uniqueness: true, length: { maximum: 50 }
 
-  validate :discount, :price, numericality: { min: 0 }
+  validates :discount, :price, numericality: { min: 0 }
 end

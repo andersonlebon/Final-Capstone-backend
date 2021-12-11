@@ -11,7 +11,8 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
+    @user = User.find(params[:user_id])
+    @reservation = @user.reservations.create(reservation_params)
     if @reservation.save
       render json: @reservation
     else
@@ -21,6 +22,6 @@ class ReservationsController < ApplicationController
 
   private 
   def reservation_params
-    params.require(:resevation).permit(:rent_duration)
+    params.require(:reservation).permit(:rent_duration)
   end
 end

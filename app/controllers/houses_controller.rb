@@ -19,6 +19,14 @@ class HousesController < ApplicationController
     end
   end
 
+  def destroy
+    @house = House.where(params[:id]).first
+    @house.destroy
+    head :no_content
+    render json: { message: 'House successfully deleted' }
+  end 
+  
+
   private
 
   def house_params

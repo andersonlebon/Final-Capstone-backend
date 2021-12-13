@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @user = User.where(id: params[:user_id]).first
     @reservations = @user.reservations
     render json: @reservations
   end

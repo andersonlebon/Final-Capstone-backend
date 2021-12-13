@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   def create
 
     secret_key_base = ENV['secret_key_base'] || Rails.application.secret_key_base
+    
     # find and check if the user is authenticated
     user = User.where(name: session_params[:name]).first
     if user

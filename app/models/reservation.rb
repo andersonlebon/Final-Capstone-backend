@@ -1,7 +1,7 @@
 class Reservation < ApplicationRecord
   belongs_to :user
 
-  has_many :houses
+  has_and_belongs_to_many :houses
 
   validates :rent_duration, :rent_start_date, :rent_total_price, presence: true
 

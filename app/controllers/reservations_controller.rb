@@ -20,7 +20,8 @@ class ReservationsController < ApplicationController
     end
   end
 
-  private 
+  private
+
   def reservation_params
     params.require(:reservation).permit(:rent_duration)
   end

@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = User.where(params[:user_id])
     @reservation = @user.reservations.create(reservation_params)
     @reservation.house_ids = params[:house_ids]
     

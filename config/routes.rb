@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   scope :api do
     scope :v1 do
       resources :sessions, only: [:create, :destroy]
-      resources :users  do
-        resources :reservations
-        resources :houses
+      resources :users, only: [:create] do
+        resources :reservations, only: [:index, :create, :destroy]
+        resources :houses, only: [:index, :create, :destroy, :show]
       end
     end
   end

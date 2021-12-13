@@ -24,8 +24,7 @@ class HousesController < ApplicationController
     @house.destroy
     head :no_content
     render json: { message: 'House successfully deleted' }
-  end 
-  
+  end
 
   private
 

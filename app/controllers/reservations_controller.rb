@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
     @user = User.where(params[:user_id])
     @reservation = @user.reservations.create(reservation_params)
     @reservation.house_ids = params[:house_ids]
-    
+
     if @reservation.save
       render json: @reservation
     else
@@ -30,9 +30,7 @@ class ReservationsController < ApplicationController
     else
       render json: @reservation.errors, status: :unprocessable_entity
     end
-
   end
-
 
   private
 

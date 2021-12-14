@@ -20,7 +20,7 @@ class HousesController < ApplicationController
   end
 
   def destroy
-    @house = House.where(id:params[:id]).first
+    @house = House.where(id: params[:id]).first
     @house.destroy
     render json: { message: 'House successfully deleted' }, status: :no_content
   end

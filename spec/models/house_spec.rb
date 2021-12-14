@@ -4,7 +4,7 @@ RSpec.describe House, type: :model do
   # Association test
   it { should belong_to(:user) }
   it { should have_and_belong_to_many(:reservations) }
-   # Validation tests
+  # Validation tests
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:location) }
   it { should validate_presence_of(:image) }
@@ -15,5 +15,6 @@ RSpec.describe House, type: :model do
   it { should validate_numericality_of(:discount) }
   it {
     should validate_length_of(:house_description)
-      .is_at_most(150)   }
+      .is_at_most(150)
+  }
 end

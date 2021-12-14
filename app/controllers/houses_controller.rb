@@ -6,24 +6,23 @@ class HousesController < ApplicationController
 
   def show
     @house = House.where(id: params[:id]).first
-    render json: @house
+    render json: @house, status: :ok
   end
 
   def create
     @user = User.find(params[:user_id])
     @house = @user.houses.create(house_params)
     if @house.save
-      render json: @house
+      render json: @house, status: :created
     else
       render json: @house.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @house = House.where(params[:id]).first
+    @house = House.where(id: params[:id]).first
     @house.destroy
-    head :no_content
-    render json: { message: 'House successfully deleted' }
+    render json: { message: 'House successfully deleted' }, status: :no_content
   end
 
   private

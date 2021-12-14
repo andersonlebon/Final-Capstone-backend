@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
     @reservation.house_ids = params[:house_ids]
 
     if @reservation.save
-      render json: @reservation
+      render json: @reservation, status: :created
     else
       render json: @reservation.errors, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.where(id: params[:id]).first
     # send a message if the reservation is deleted
     if @reservation.destroy
-      render json: { message: 'Reservation deleted' }, status: :destroyed
+      render json: { message: 'Reservation deleted' }, status: :no_content
     else
       render json: @reservation.errors, status: :unprocessable_entity
     end

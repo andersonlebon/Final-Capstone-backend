@@ -13,7 +13,7 @@ class HousesController < ApplicationController
     @user = User.find(params[:user_id])
     @house = @user.houses.create(house_params)
     if @house.save
-      render json: @house
+      render json: @house, status: :created
     else
       render json: @house.errors, status: :unprocessable_entity
     end

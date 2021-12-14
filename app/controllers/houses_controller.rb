@@ -6,7 +6,7 @@ class HousesController < ApplicationController
 
   def show
     @house = House.where(id: params[:id]).first
-    render json: @house
+    render json: @house, status: :ok
   end
 
   def create
@@ -22,7 +22,6 @@ class HousesController < ApplicationController
   def destroy
     @house = House.where(id:params[:id]).first
     @house.destroy
-    # head :no_content
     render json: { message: 'House successfully deleted' }, status: :no_content
   end
 

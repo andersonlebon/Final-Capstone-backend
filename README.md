@@ -1,4 +1,4 @@
-# Final group capstone - House Reservation: Backend
+# Final group capstone - House Reservation: Back end
 
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 

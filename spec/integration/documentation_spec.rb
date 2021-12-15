@@ -5,7 +5,7 @@ require 'swagger_helper'
 #     post 'Creates a user' do
 #       tags 'User'
 #       consumes 'application/json'
-      
+
 #       parameter name: :user, in: :body, schema: {
 #         type: :object,
 #         properties: {
@@ -34,7 +34,7 @@ require 'swagger_helper'
 #     get 'Retrieves all houses' do
 #       tags 'Houses'
 #       produces 'application/json'
-      
+
 #       response '200', 'ok' do
 #         schema type: :object,
 #           properties: {
@@ -47,7 +47,8 @@ require 'swagger_helper'
 #             discount: { type: :integer },
 #             user_id: { type: :integer }
 #           },
-#           required: [ 'title', 'house_description', 'location', 'image', 'price', 'availability', 'discount','user_id' ]
+#           required: [ 'title', 'house_description', 'location',
+#                     'image', 'price', 'availability', 'discount','user_id' ]
 
 #         let(:user_id) { User.create(name: 'Tester').id }
 #         run_test!
@@ -110,7 +111,8 @@ require 'swagger_helper'
 #       }
 
 #       response '200', 'house created' do
-#         let(:house) { { title: 'House 1', house_description: 'Cozy house', location:'London', image:'', price:250, availability: 12, discount: 1.5, user_id: 1  } }
+#         let(:house) { { title: 'House 1', house_description: 'Cozy house', location:'London',
+# image:'', price:250, availability: 12, discount: 1.5, user_id: 1  } }
 #         run_test!
 #       end
 
@@ -129,7 +131,7 @@ require 'swagger_helper'
 #       produces 'application/json'
 #       parameter name: :user_id, :in => :path, :type => :string
 #       parameter name: :id, :in => :path, :type => :string
-      
+
 #       response '200', 'House deleted' do
 #         let(:id) {create(:house).id}
 
@@ -162,7 +164,6 @@ require 'swagger_helper'
 #     end
 #   end
 
-  
 #   path 'api/v1/users/{user_id}/reservations' do
 
 #     post 'Creates a reservation' do
@@ -201,7 +202,7 @@ require 'swagger_helper'
 #       produces 'application/json'
 #       parameter name: :user_id, :in => :path, :type => :string
 #       parameter name: :id, :in => :path, :type => :string
-      
+
 #       response '200', 'Reservation deleted' do
 #         let(:id) {create(:reservation).id}
 
@@ -210,5 +211,5 @@ require 'swagger_helper'
 #     end
 #   end
 #   end
-  
+
 # end

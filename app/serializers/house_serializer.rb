@@ -3,9 +3,6 @@ class HouseSerializer < ActiveModel::Serializer
   attributes :id, :title, :house_description, :location, :availability, :price, :discount, :image, :user_id
 
   def image
-    if object.image.attached?
-      rails_blob_url(object.image)
-    
-    end
+    rails_blob_url(object.image) if object.image.attached?
   end
 end

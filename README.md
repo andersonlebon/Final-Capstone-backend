@@ -16,6 +16,10 @@ Project requirements can be found [here](https://github.com/microverseinc/curric
 
 [API-Live]()
 
+## Documentations
+
+Folow this [link](https://house-booking-api.herokuapp.com/api-docs/index.html) to see the documentation of the API.
+
 ## Built With
 
 - Ruby on Rails

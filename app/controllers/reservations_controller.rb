@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  before_action :set_reservation, only: %i[show destroy]
   def index
     @user = User.find(params[:user_id])
     @reservations = @user.reservations
@@ -9,7 +10,6 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
     render json: @reservation
   end
 
@@ -26,8 +26,6 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    @reservation = Reservation.find(params[:id])
-    # send a message if the reservation is deleted
     if @reservation.destroy
       render json: { message: 'Reservation deleted' }, status: :no_content
     else
@@ -36,6 +34,10 @@ class ReservationsController < ApplicationController
   end
 
   private
+
+   def set_reservation
+    @reservation = Reservation.find(params[:id])
+  end
 
   def reservation_params
     params.require(:reservation).permit(:rent_duration, :rent_start_date, :rent_total_price)

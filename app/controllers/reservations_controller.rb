@@ -2,7 +2,10 @@ class ReservationsController < ApplicationController
   def index
     @user = User.where(id: params[:user_id]).first
     @reservations = @user.reservations
-    render json: @reservations
+    @new_res = @reservations.map do |reservation|
+      reservation.as_json.merge(house: reservation.house_ids[0] || {})
+    end
+    render json: @new_res
   end
 
   def show
@@ -16,7 +19,7 @@ class ReservationsController < ApplicationController
     @reservation.house_ids = params[:house_ids]
 
     if @reservation.save
-      render json: @reservation, status: :created
+      render json: { message: 'Created' }, status: :created
     else
       render json: @reservation.errors, status: :unprocessable_entity
     end

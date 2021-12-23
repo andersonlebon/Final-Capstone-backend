@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     secret_key_base = ENV['secret_key_base'] || Rails.application.secret_key_base
 
     # find and check if the user is authenticated
-    user = User.where(name: session_params[:name]).first
+    user = User.find(name: session_params[:name])
     if user
       payload = { name: session_params[:name], user_id: user.id }
       exp = 24.hours.from_now

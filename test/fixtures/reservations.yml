@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rent_duration: 1
+  rent_start_date: 2021-12-10
+  rent_total_price: 9.99
+  user: one
+
+two:
+  rent_duration: 1
+  rent_start_date: 2021-12-10
+  rent_total_price: 9.99
+  user: two

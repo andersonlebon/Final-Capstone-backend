@@ -12,9 +12,9 @@ Project requirements can be found [here](https://github.com/microverseinc/curric
 
 ## Frontend Pull Request
 
-[Github PR](https://github.com/andersonlebon/Final-capstone-frontend-/pull/15)
-
-[API-Live](https://house-booking-api.herokuapp.com)
+- [Frontend repo](https://github.com/andersonlebon/Final-capstone-frontend-)
+- [Frontend Live Link](https://bookinghouse.netlify.app)
+- [API-Live](https://house-booking-api.herokuapp.com)
 
 ## Kanban board
 We are three in this team:  

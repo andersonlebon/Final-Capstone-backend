@@ -1,11 +1,11 @@
 class HousesController < ApplicationController
-  before_action :set_house, only: %i[show destroy]
   def index
     @house = House.all
     render json: @house
   end
 
   def show
+    @house = House.find(params[:id])
     render json: @house, status: :ok
   end
 
@@ -20,6 +20,7 @@ class HousesController < ApplicationController
   end
 
   def destroy
+    @house = House.find(params[:id])
     @house.destroy
     render json: { message: 'House successfully deleted' }, status: :no_content
   end

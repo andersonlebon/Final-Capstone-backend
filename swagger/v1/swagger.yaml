@@ -1,0 +1,274 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  api/v1/sessions:
+    post:
+      summary: Creates a user
+      tags:
+      - User
+      parameters: []
+      responses:
+        '200':
+          description: user created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+              - name
+  api/v1/users/{user_id}/houses:
+    get:
+      summary: Retrieves all houses
+      tags:
+      - Houses
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  house_description:
+                    type: string
+                  location:
+                    type: string
+                  image:
+                    type: string
+                  price:
+                    type: decimal
+                  availability:
+                    type: integer
+                  discount:
+                    type: integer
+                  user_id:
+                    type: integer
+                required:
+                - title
+                - house_description
+                - location
+                - image
+                - price
+                - availability
+                - discount
+                - user_id
+    post:
+      summary: Creates a house
+      tags:
+      - Houses
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: house created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                house_description:
+                  type: string
+                location:
+                  type: string
+                image:
+                  type: string
+                price:
+                  type: integer
+                availability:
+                  type: integer
+                discount:
+                  type: integer
+                user_id:
+                  type: integer
+              required:
+              - title
+              - house_description
+              - location
+              - image
+              - price
+              - availability
+              - discount
+              - user_id
+  api/v1/users/{user_id}/houses/{id}:
+    get:
+      summary: Retrieves a house
+      tags:
+      - Houses
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  house_description:
+                    type: string
+                  location:
+                    type: string
+                  image:
+                    type: string
+                  price:
+                    type: decimal
+                  availability:
+                    type: integer
+                  discount:
+                    type: integer
+                  user_id:
+                    type: integer
+                required:
+                - title
+                - house_description
+                - location
+                - image
+                - price
+                - availability
+                - discount
+                - user_id
+        '404':
+          description: house not found
+  "/api/v1/users/{user_id}/houses/{id}":
+    delete:
+      summary: Delete house
+      tags:
+      - Houses
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: House deleted
+  api/v1/users/{user_id}/reservations:
+    get:
+      summary: Retrieves all reservations
+      tags:
+      - Reservations
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rent_duration:
+                    type: string
+                  rent_start_date:
+                    type: string
+                  rent_total_price:
+                    type: string
+                  user_id:
+                    type: integer
+                required:
+                - rent_duration
+                - rent_start_date
+                - rent_total_price
+                - user_id
+    post:
+      summary: Creates a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: reservation created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                rent_duration:
+                  type: string
+                rent_start_date:
+                  type: string
+                rent_total_price:
+                  type: string
+                user_id:
+                  type: integer
+                house_ids:
+                  type: integer
+              required:
+              - rent_duration
+              - rent_start_date
+              - rent_total_price
+              - user_id
+              - house_ids
+  "/api/v1/users/{user_id}/reservations/{id}":
+    delete:
+      summary: Delete reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Reservation deleted
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

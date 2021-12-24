@@ -12,9 +12,19 @@ Project requirements can be found [here](https://github.com/microverseinc/curric
 
 ## Frontend Pull Request
 
-[Github PR]()
+[Github PR](https://github.com/andersonlebon/Final-capstone-frontend-/pull/15)
 
-[API-Live]()
+[API-Live](https://house-booking-api.herokuapp.com)
+
+## Kanban board
+We are three in this team:  
+- [ ] Team member A is @pasytchangwa
+- [ ] Team member B is @toliboff
+- [ ] Team member C is @andersonlebon
+
+Here is the link to the project [Kanban board](https://github.com/andersonlebon/Final-Capstone-backend/projects/1)
+
+[Kanban board initial state screenshot](https://drive.google.com/file/d/1HfBGorTIt5VthTBYDFuNdxRyPos0eSAK/view?usp=sharing)
 
 ## Documentations
 
@@ -50,7 +60,7 @@ bundle install
 
 ```sh
 # Create user
-sudo -u postgres createuser recipe_app -s
+sudo -u postgres createuser booking_app -s
 
 # Create the database
 rails db:create
